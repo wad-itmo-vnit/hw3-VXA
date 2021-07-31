@@ -1,0 +1,147 @@
+html {
+    font-family: 'Dancing Script', cursive;
+}
+body{
+    background-color:rgba(170, 170, 170, 0.5);
+    background-image: url("/static/images/dota.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+p{
+    text-shadow: black 5px 5px 10px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    font-size: 90px;
+    color: yellow;
+    margin: 0;
+}
+
+#header {
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    border: 10px red;
+    margin: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: 30px;
+}
+
+#gallery{
+    width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    z-index: -1;
+}
+
+.box {
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    flex-basis: 33%;
+    flex-grow: 1;
+}
+.box *{
+    box-sizing:border-box;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    border-radius: 20px;
+    padding: 3px;
+}
+.box .hover_box{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    text-align:right;
+    outline: 1px solid white;
+    outline-offset:-15px;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 0 3px rgb(12, 0, 0) inset;
+}
+.box .hover_text{
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left:0;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: yellow;
+}
+
+#modal-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+#modal-box{
+    height: 40%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    display: none;
+    justify-content: center;
+    cursor: default;
+    flex-direction: column;
+}
+
+.modal-image {
+    border: 5px solid gray;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+.desc{
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 940px){
+    #gallery{
+        width: 600px;
+    }
+    p{
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 665px){
+    #gallery{
+        width: 300px;
+    }
+    p{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    #gallery{
+        width: 200px;
+    }
+    .box{
+        flex-basis: 100%;
+    }
+    p{
+        font-size: 30px;
+    }
+}

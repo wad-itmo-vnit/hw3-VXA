@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <title>VO XUAN ANH - N41512c</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div id="header">
+        <p>
+            Võ Xuân Anh
+        </p>
+    </div>
+    <div id="modal-wrap">        
+        <div id="modal-box">
+            <h1>abc</h1>
+        </div>
+    </div>
+    <div id="gallery">
+        <div class="box" id="0">
+            <img src="{{ url_for('static', filename='images/dota0.jpg') }}" class="image" alt="Void Spirit">
+                <div class="hover_box"></div>
+                <div class="hover_text">Chị</div>
+        </div>
+
+        <div class="box" id="1">
+            <img src=" {{ url_for('static', filename = 'images/dota1.jpg') }}" class="image" alt="Alchemist">
+                <div class="hover_box"></div>
+                <div class="hover_text">ong</div>
+        </div>
+        <div class="box" id="2">
+            <img src=" {{ url_for('static', filename = 'images/dota2.jpg') }}" class="image" alt="Anti-Mage">
+                <div class="hover_box"></div>
+                <div class="hover_text">nâu</div>
+        </div>
+
+        <div class="box" id="3">
+            <img src=" {{ url_for('static', filename = 'images/dota3.jpg') }}" class="image" alt="Earth Spirit">
+                <div class="hover_box"></div>
+                <div class="hover_text">nấu</div>
+        </div>
+        <div class="box" id="4">
+            <img src=" {{ url_for('static', filename = 'images/dota4.jpg') }}" class="image" alt="Ember Spirit">
+                <div class="hover_box"></div>
+                <div class="hover_text">nâu</div>
+        </div>
+        <div class="box" id="5">
+            <img src=" {{ url_for('static', filename = 'images/dota5.jpg') }}" class="image" alt="Invoker">
+                <div class="hover_box"></div>
+                <div class="hover_text">nấu</div>
+        </div>
+        <div class="box" id="6">
+            <img src=" {{ url_for('static', filename = 'images/dota6.jpg') }}" class="image" alt="Lina">
+                <div class="hover_box"></div>
+                <div class="hover_text">nầu</div>
+        </div>
+        <div class="box" id="7">
+            <img src=" {{ url_for('static', filename = 'images/dota7.jpg') }}" class="image" alt="Priestess of the moon">
+                <div class="hover_box"></div>
+                <div class="hover_text">nâu !</div>
+        </div>
+        <div class="box" id="8">
+            <img src=" {{ url_for('static', filename = 'images/dota8.jpg') }}" class="image" alt="Mars">
+                <div class="hover_box"></div>
+                <div class="hover_text">Chị</div>
+        </div>
+        <div class="box" id="9">
+            <img src=" {{ url_for('static', filename = 'images/dota9.jpg') }}" class="image" alt="Monkey King">
+                <div class="hover_box"></div>
+                <div class="hover_text">bay</div>
+        </div>
+        <div class="box" id="10">
+            <img src=" {{ url_for('static', filename = 'images/dota10.jpg') }}" class="image" alt="Ogre Magi">
+                <div class="hover_box"></div>
+                <div class="hover_text">đi</div>
+        </div>
+        <div class="box" id="11">
+            <img src=" {{ url_for('static', filename = 'images/dota11.jpg') }}" class="image" alt="PA & Oracle">
+                <div class="hover_box"></div>
+                <div class="hover_text">đâu</div>
+        </div>
+        <div class="box" id="12">
+            <img src=" {{ url_for('static', filename = 'images/dota12.jpg') }}" class="image" alt="Silencer">
+                <div class="hover_box"></div>
+                <div class="hover_text">đi</div>
+        </div>
+        <div class="box" id="13">
+            <img src=" {{ url_for('static', filename = 'images/dota13.jpg') }}" class="image" alt="Snapfire">
+                <div class="hover_box"></div>
+                <div class="hover_text">đâu</div>
+        </div>
+        <div class="box" id="14">
+            <img src=" {{ url_for('static', filename = 'images/dota14.jpg') }}" class="image" alt="Storm Spirit">
+                <div class="hover_box"></div>
+                <div class="hover_text">về</div>
+        </div>
+        <div class="box" id="15">
+            <img src=" {{ url_for('static', filename = 'images/dota15.jpg') }}" class="image" alt="Tidehunter">
+                <div class="hover_box"></div>
+                <div class="hover_text">đâu?</div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        let box_elements = document.getElementsByClassName("box");
+        let image_elements = document.getElementsByClassName("image");
+        let hover_box_elements = document.getElementsByClassName("hover_box");
+        let hover_text_elements = document.getElementsByClassName("hover_text");
+        let modal_wrap = document.getElementById('modal-wrap');
+        let modal = document.getElementById('modal-box');
+        let header = document.getElementById('header');
+        for (var i = 0; i < box_elements.length; i++){
+            box_elements[i].addEventListener("mouseenter", e => {
+                let id = e.target.id;
+                image_elements[id].style.opacity = 0.1;
+                hover_box_elements[id].style.opacity = 1;
+                hover_text_elements[id].style.opacity = 1;
+            })
+            box_elements[i].addEventListener("mouseleave", e => {
+                let id = e.target.id;
+                image_elements[id].style.opacity = 1;
+                hover_box_elements[id].style.opacity = 0;
+                hover_text_elements[id].style.opacity = 0;
+            })
+            box_elements[i].addEventListener("click", e => {
+                let id = e.currentTarget.id;
+                img = e.currentTarget.querySelector('img');
+                modal = document.getElementById('modal-box');
+                modal.style.display = "flex";
+                modal.innerHTML = `<img src="/static/images/dota${id}.jpg" class="modal-image"><p class="desc">${img.alt}</p>`
+                document.getElementById('gallery').style.display = "none";
+                header.innerHTML = "<p>Hero Portrait</p>";
+                header.style.position="fixed";
+                modal_wrap.style.cursor = "pointer";
+            })
+        }
+        function reverseChange() {
+            modal.style.display = "none";
+            modal.innerHTML = '';
+            document.getElementById('gallery').style.display = "flex";
+            header.innerHTML = "<p>Võ Xuân Anh</p>";
+            header.style.position="static";
+            modal_wrap.style.cursor = "default";
+        }
+        modal_wrap.addEventListener('click', function(event) {
+            var isClickInside = modal.contains(event.target);
+            if (isClickInside) {         
+            }
+            else{   
+                reverseChange();
+            }
+        });
+        header.addEventListener('click', function(event) {
+            reverseChange();
+        })
+        document.addEventListener('keydown', (e) => {
+            if (e.key == "Escape") {
+                reverseChange();
+            }
+        })
+    </script>
+
+</body>
+</html>
