@@ -7,3 +7,4 @@
 ## Run
 - python app.py
 
+Click [here](https://gallery-vxa-heroku.herokuapp.com/) to visit the app's version deployed on Heroku
